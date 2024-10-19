@@ -1,5 +1,8 @@
 # Name of the workflow
-name: CI Pipeline
+name: Error CI Pipeline
+
+# This workflow is designed to test the test_script_error.py, which intentionally contains errors.
+# This allows us to verify how the CI/CD pipeline handles test failures.
 
 # Define the events that trigger the workflow
 on:
@@ -21,26 +24,28 @@ jobs:
     # Define the steps to execute in this job
     steps:
       # Step 1: Checkout the code from the repository
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v2
+        # This action checks out your repository under $GITHUB_WORKSPACE, so your workflow can access it.
 
       # Step 2: Set up the Python environment
-      - name: Set up Python
+      - name: Set Up Python Environment
         uses: actions/setup-python@v2
         with:
-          # Specify the version of Python to use
+          # Specify the version of Python to use for the environment
           python-version: "3.9"  # Replace with your desired Python version
 
       # Step 3: Install project dependencies
-      - name: Install dependencies
+      - name: Install Project Dependencies
         run: |
-          # Upgrade pip to the latest version
+          # Upgrade pip to ensure we have the latest package management tools
           python -m pip install --upgrade pip
-          # Install pytest for running tests
+          # Install pytest, a testing framework that we'll use to run our test scripts
           pip install pytest
 
-      # Step 4: Run the tests using pytest
-      - name: Run tests
+      # Step 4: Execute tests using pytest
+      - name: Run Tests
         run: |
-          # Execute the tests in the specified test scripts
-          pytest test_script.py  # Run tests in the first test script
+          # Execute the tests defined in the test_script_error.py script.
+          # This script is expected to have errors, allowing us to verify the CI's error handling.
+          pytest test_script_error.py  # Run tests in the specified test script
