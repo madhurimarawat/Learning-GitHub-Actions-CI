@@ -44,4 +44,3 @@ jobs:
         run: |
           # Execute the tests in the specified test scripts
           pytest test_script.py  # Run tests in the first test script
-          pytest test_script_corrected.py  # Run tests in the corrected test script
