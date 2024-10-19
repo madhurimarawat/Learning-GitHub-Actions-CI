@@ -1,5 +1,8 @@
 # Name of the workflow
-name: CI Pipeline
+name: Correct CI Pipeline
+
+# This workflow is designed to run tests on the corrected test_script_corrected.py
+# It verifies that the code functions as expected without errors.
 
 # Define the events that trigger the workflow
 on:
@@ -21,26 +24,28 @@ jobs:
     # Define the steps to execute in this job
     steps:
       # Step 1: Checkout the code from the repository
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v2
+        # This action checks out your repository so that the workflow can access the code files.
 
       # Step 2: Set up the Python environment
-      - name: Set up Python
+      - name: Set Up Python Environment
         uses: actions/setup-python@v2
         with:
-          # Specify the version of Python to use
-          python-version: "3.9"  # Replace with your desired Python version
+          # Specify the version of Python to use for the environment
+          python-version: "3.9"  # This sets the Python version to 3.9; adjust as needed for your project.
 
       # Step 3: Install project dependencies
-      - name: Install dependencies
+      - name: Install Project Dependencies
         run: |
-          # Upgrade pip to the latest version
+          # Upgrade pip to ensure that we have the latest version of the package installer
           python -m pip install --upgrade pip
-          # Install pytest for running tests
+          # Install pytest, which is necessary for running our test scripts
           pip install pytest
 
-      # Step 4: Run the tests using pytest
-      - name: Run tests
+      # Step 4: Execute tests using pytest
+      - name: Run Tests
         run: |
-          # Execute the tests in the specified test scripts
-          pytest test_script_correcetd.py  # Run tests in the correct test script
+          # Run the tests defined in the corrected test_script_corrected.py script.
+          # This script is expected to contain passing tests to ensure that the code is functioning correctly.
+          pytest test_script_corrected.py  # Execute tests in the specified test script
