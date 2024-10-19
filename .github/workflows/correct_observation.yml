@@ -1,0 +1,46 @@
+# Name of the workflow
+name: CI Pipeline
+
+# Define the events that trigger the workflow
+on:
+  # Trigger the workflow on pushes to the 'main' branch
+  push:
+    branches:
+      - main
+  # Trigger the workflow on pull requests targeting the 'main' branch
+  pull_request:
+    branches:
+      - main
+
+# Define the jobs that will run as part of this workflow
+jobs:
+  build:
+    # Specify the operating system for the job
+    runs-on: ubuntu-latest
+
+    # Define the steps to execute in this job
+    steps:
+      # Step 1: Checkout the code from the repository
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Set up the Python environment
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          # Specify the version of Python to use
+          python-version: "3.9"  # Replace with your desired Python version
+
+      # Step 3: Install project dependencies
+      - name: Install dependencies
+        run: |
+          # Upgrade pip to the latest version
+          python -m pip install --upgrade pip
+          # Install pytest for running tests
+          pip install pytest
+
+      # Step 4: Run the tests using pytest
+      - name: Run tests
+        run: |
+          # Execute the tests in the specified test scripts
+          pytest test_script_correcetd.py  # Run tests in the correct test script
