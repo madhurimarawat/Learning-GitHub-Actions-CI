@@ -1,4 +1,4 @@
-# test_script.py
+# test_script_error.py
 
 # Import the functions to be tested from script.py
 from script import add, subtract
