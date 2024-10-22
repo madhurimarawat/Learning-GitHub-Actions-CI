@@ -1,0 +1,50 @@
+# Name of the workflow
+name: Normal CI Pipeline
+
+# This workflow is designed to test all the test cases.
+# This allows us to verify how the CI/CD pipeline handles all test cases.
+
+# Define the events that trigger the workflow
+on:
+  # Trigger the workflow on pushes to the 'main' branch
+  push:
+    branches:
+      - main
+  # Trigger the workflow on pull requests targeting the 'main' branch
+  pull_request:
+    branches:
+      - main
+
+# Define the jobs that will run as part of this workflow
+jobs:
+  build:
+    # Specify the operating system for the job
+    runs-on: ubuntu-latest
+
+    # Define the steps to execute in this job
+    steps:
+      # Step 1: Checkout the code from the repository
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        # This action checks out the repository under $GITHUB_WORKSPACE, so the workflow can access it.
+
+      # Step 2: Set up the Python environment
+      - name: Set Up Python Environment
+        uses: actions/setup-python@v2
+        with:
+          # Specify the version of Python to use for the environment
+          python-version: "3.9" # Replace with the desired Python version
+
+      # Step 3: Install project dependencies
+      - name: Install Project Dependencies
+        run: |
+          # Upgrade pip to ensure we have the latest package management tools
+          python -m pip install --upgrade pip
+          # Install pytest, a testing framework that we'll use to run our test scripts
+          pip install pytest
+
+      # Step 4: Execute tests using pytest
+      - name: Run Tests
+        run: |
+          # This will run all the test cases in the test suite
+          pytest
