@@ -424,3 +424,16 @@ we have successfully set up GitHub Actions to run Python tests on each push or p
 
 - [CI/CD Best Practices](https://www.redhat.com/en/topics/devops/what-is-ci-cd) - Learn more about the best practices in CI/CD and how it integrates into the DevOps workflow.
 - [Automated Testing Strategies](https://www.atlassian.com/continuous-delivery/software-testing/automated-testing) - Discover various testing strategies for automation using tools like PyTest, Selenium, and others.
+
+---
+## 📬 Stay Connected
+
+- Drop a 🌟 if you find this repository useful.
+- If you have any doubts or suggestions, feel free to reach: &nbsp; [![Linkedin Badge](https://img.shields.io/badge/-madhurima-blue?style=flat&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/madhurima-rawat/) &nbsp; &nbsp;
+<a href ="mailto:rawatmadhurima@gmail.com"><img src="https://github.com/madhurimarawat/Machine-Learning-Using-Python/assets/105432776/b6a0873a-e961-42c0-8fbf-ab65828c961a" height=35 width=30 title="Mail Illustration" alt="Mail Illustration📫" > </a><br>
+
+- **Questions or feedback?**  
+&nbsp; Feel free to open an [issue](https://github.com/madhurimarawat/Learning-GitHub-Actions-CI/issues) or connect via [GitHub Discussions](https://github.com/madhurimarawat/Learning-GitHub-Actions-CI/discussions). I'm happy to help!<br>
+
+- **Follow this repo** to get notified about new challenges and updates! ⭐  
+- 👩‍💻 **Happy Coding!**
