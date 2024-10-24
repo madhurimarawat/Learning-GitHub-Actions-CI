@@ -434,6 +434,3 @@ we have successfully set up GitHub Actions to run Python tests on each push or p
 
 - **Questions or feedback?**  
 &nbsp; Feel free to open an [issue](https://github.com/madhurimarawat/Learning-GitHub-Actions-CI/issues) or connect via [GitHub Discussions](https://github.com/madhurimarawat/Learning-GitHub-Actions-CI/discussions). I'm happy to help!<br>
-
-- **Follow this repo** to get notified about new challenges and updates! ⭐  
-- 👩‍💻 **Happy Coding!**
